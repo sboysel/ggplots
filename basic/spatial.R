@@ -25,17 +25,21 @@ prepare_spdf <- function(spdf) {
 
 # Reproject Canada to Canada Albers Equal Area Projection
 aea.crs <- CRS("+proj=aea +lat_1=50 +lat_2=70 +lat_0=40 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs")
-canada.admin.aea <- spTransform(canada.admin, aea.crs)
-plot(canada.admin.aea)
 
 ## Load Data
-# (1) Canada Borders Vector Layer
+# (1) Canada Borders Vector Layer (GeoJSON)
 canada.url <- "https://raw.githubusercontent.com/mledoze/countries/master/data/can.geo.json"
 canada.admin <- readOGR(canada.url, "OGRGeoJSON")
+canada.admin.aea <- spTransform(canada.admin, aea.crs)
+
+# (2) USA Counties Vector Layer (Topo)
+us.counties.url <- "https://raw.githubusercontent.com/mbostock/topojson/master/examples/us-10m.json"
+us.counties <- readOGR(us.counties.url, layer = "counties")
 
 ## Plot
 # (1) Using base plotting methods for Spatial objects
 plot(canada.admin)
+plot(canada.admin.aea)
 
 # (2) Now plot using gglot2
 canada.admin.df <- prepare_spdf(canada.admin)
