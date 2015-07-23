@@ -43,15 +43,15 @@ names(iss.clean) <- toupper(names(iss.clean))
 
 ## Plot
 iss.clean %>%
-  ggplot(aes(x = START)) +
-    geom_bar(aes(y = SECONDS, fill = START.WDAY), stat = "identity") +
+  ggplot(mapping = aes(x = START)) +
+    geom_bar(mapping = aes(y = SECONDS, fill = START.WDAY), stat = "identity") +
     scale_x_datetime(breaks = date_breaks("1 day")) +
     facet_grid(~ START.MONTH, scales = "free", space = "free") +
     coord_flip()
 
 iss.clean %>%
-  ggplot(aes(x = START)) +
-    geom_bar(aes(y = SECONDS, fill = START.WDAY), stat = "identity") +
+  ggplot(mapping = aes(x = START)) +
+    geom_bar(mapping = aes(y = SECONDS, fill = START.WDAY), stat = "identity") +
     scale_x_datetime(breaks = date_breaks("3 days")) +
     facet_grid(~ START.MONTH, margins = TRUE) +
     coord_flip()
