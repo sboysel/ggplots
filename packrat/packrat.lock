@@ -166,11 +166,22 @@ Version: 1.4.1
 Hash: 5990382c4af41f623890b1aeb63ffab5
 Requires: Rcpp, plyr, stringr
 
+Package: rgdal
+Source: CRAN
+Version: 1.0-4
+Hash: cdbf64ec989fbbd69b763c10fc933557
+Requires: sp
+
 Package: scales
 Source: CRAN
 Version: 0.2.5
 Hash: bec2b5457cce7f6b4922fc0610085a48
 Requires: RColorBrewer, Rcpp, dichromat, labeling, munsell, plyr
+
+Package: sp
+Source: CRAN
+Version: 1.1-1
+Hash: a6f7857b06c83649b8c6a4724b5b9233
 
 Package: stringi
 Source: CRAN
