@@ -23,10 +23,21 @@ Source: CRAN
 Version: 1.1-2
 Hash: c0d56cd15034f395874c870141870c25
 
+Package: RCurl
+Source: CRAN
+Version: 1.95-4.7
+Hash: 7756ed9df5d79ca87bc9e93f85d89b87
+Requires: bitops
+
 Package: Rcpp
 Source: CRAN
 Version: 0.11.6
 Hash: 193916618dce89b287517f457de8fa8b
+
+Package: Rttf2pt1
+Source: CRAN
+Version: 1.3.3
+Hash: 9201dab81dba2ac3bbfc34130b728e5d
 
 Package: XML
 Source: CRAN
@@ -37,6 +48,16 @@ Package: assertthat
 Source: CRAN
 Version: 0.1
 Hash: 0afb92b59b02593c70ff8046700ba9d3
+
+Package: bitops
+Source: CRAN
+Version: 1.0-6
+Hash: 67d0775189fd0041d95abca618c5c07e
+
+Package: brew
+Source: CRAN
+Version: 1.0-6
+Hash: 931f9972deae0f205e1c78a51f33149b
 
 Package: cellranger
 Source: CRAN
@@ -52,6 +73,13 @@ Package: curl
 Source: CRAN
 Version: 0.9.1
 Hash: 19b1413ddc86eb2b09d02d8b230d054a
+
+Package: devtools
+Source: CRAN
+Version: 1.8.0
+Hash: 908d926757f793f385049f4f140e7313
+Requires: RCurl, digest, evaluate, git2r, httr, jsonlite, memoise,
+    roxygen2, rstudioapi, rversions, whisker
 
 Package: dichromat
 Source: CRAN
@@ -69,11 +97,33 @@ Version: 0.4.2
 Hash: 836b8d0eab1b3038ece1ab5d179b6d0f
 Requires: BH, DBI, R6, Rcpp, assertthat, lazyeval, magrittr
 
+Package: evaluate
+Source: CRAN
+Version: 0.7
+Hash: a60973dc1469b851e9b099b7e47043b5
+Requires: stringr
+
+Package: extrafont
+Source: CRAN
+Version: 0.17
+Hash: d9555d8cfe70b3372d066648400770b5
+Requires: Rttf2pt1, extrafontdb
+
+Package: extrafontdb
+Source: CRAN
+Version: 1.0
+Hash: 72269616f582dc675c90ecd025af2754
+
 Package: ggplot2
 Source: CRAN
 Version: 1.0.1
 Hash: 4aff1b269135bd2cdea378f4f2f2895e
 Requires: digest, gtable, plyr, proto, reshape2, scales
+
+Package: git2r
+Source: CRAN
+Version: 0.10.1
+Hash: f0d21be15e38774dd93472fc83547068
 
 Package: googlesheets
 Source: github
@@ -85,6 +135,11 @@ GithubRepo: googlesheets
 GithubUsername: jennybc
 GithubRef: master
 GithubSha1: a1a4d877c7a0296f1c95e9f59b03ef4c1ac369b5
+
+Package: gpclib
+Source: CRAN
+Version: 1.5-5
+Hash: 194b84b1e4f183ef2f622804d01124da
 
 Package: gtable
 Source: CRAN
@@ -123,6 +178,12 @@ Source: CRAN
 Version: 1.5
 Hash: bdc4d48c3135e8f3b399536ddf160df4
 
+Package: maptools
+Source: CRAN
+Version: 0.8-36
+Hash: 5b5d53bb8f8fd2e558d4ca520fdeddc5
+Requires: sp
+
 Package: memoise
 Source: CRAN
 Version: 0.2.1
@@ -160,6 +221,16 @@ Source: CRAN
 Version: 0.3-10
 Hash: 05d7ad64db29a39d1b02c4b9f1f4edb2
 
+Package: readr
+Source: github
+Version: 0.1.1.9000
+Hash: 3a12e8885b930269c71ca6c0e25ccb7a
+Requires: BH, Rcpp, curl
+GithubRepo: readr
+GithubUsername: hadley
+GithubRef: master
+GithubSha1: f4a3956603225ea4badd719060917bb4f0188335
+
 Package: reshape2
 Source: CRAN
 Version: 1.4.1
@@ -172,11 +243,50 @@ Version: 1.0-4
 Hash: cdbf64ec989fbbd69b763c10fc933557
 Requires: sp
 
+Package: rgeos
+Source: CRAN
+Version: 0.3-11
+Hash: 6fc7f3057e858f121231f81a9bce66ac
+Requires: sp
+
+Package: roxygen2
+Source: CRAN
+Version: 4.1.1
+Hash: cb8a42732d3f42541c6f861352894a0e
+Requires: Rcpp, brew, digest, stringr
+
+Package: rstudioapi
+Source: CRAN
+Version: 0.3.1
+Hash: 88eea830c60277b858ce9334041b08bb
+
+Package: rversions
+Source: CRAN
+Version: 1.0.2
+Hash: c006a9eaa80a091dcd87bb4003887b12
+Requires: curl, xml2
+
+Package: rvest
+Source: github
+Version: 0.2.0.9000
+Hash: 4c3e7f4bfb08716a9082eb6a6c2d565d
+Requires: httr, magrittr, selectr, xml2
+GithubRepo: rvest
+GithubUsername: hadley
+GithubRef: master
+GithubSha1: 9bc31aadd0dd5ef7a84329a3f9c80cdf28230d14
+
 Package: scales
 Source: CRAN
 Version: 0.2.5
 Hash: bec2b5457cce7f6b4922fc0610085a48
 Requires: RColorBrewer, Rcpp, dichromat, labeling, munsell, plyr
+
+Package: selectr
+Source: CRAN
+Version: 0.2-3
+Hash: a5d1ba4a21c2a7ab66c21779ae26da84
+Requires: XML, stringr
 
 Package: sp
 Source: CRAN
@@ -199,6 +309,11 @@ Source: CRAN
 Version: 0.2.0
 Hash: 3445f04db2073bc56edcf672268ad48a
 Requires: dplyr, lazyeval, reshape2, stringi
+
+Package: whisker
+Source: CRAN
+Version: 0.3-2
+Hash: 803d662762e532705c2c066a82d066e7
 
 Package: xml2
 Source: CRAN
