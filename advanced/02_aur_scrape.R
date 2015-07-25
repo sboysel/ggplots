@@ -38,7 +38,7 @@ aur %>%
   arrange(-PKGS.IN.TOP.250) %>%
   head(10) %>%
   ggplot(aes(x = reorder(MAINTAINER, PKGS.IN.TOP.250), y = PKGS.IN.TOP.250)) +
-    geom_bar(aes(fill = factor(PKGS.IN.TOP.250)), stat = "identity") +
+    geom_bar(aes(fill = factor(MAINTAINER)), stat = "identity") +
   coord_flip() +
   theme(legend.position = "none") +
   labs(title = "Maintainers with Packages in Top 250 of\nArch User Repository",
