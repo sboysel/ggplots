@@ -1,5 +1,6 @@
 packrat/lib*/
-packrat/src/
 .Rproj.user
 .httr-oauth
 .Rhistory
+packrat/src/
+data/
