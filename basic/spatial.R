@@ -36,6 +36,10 @@ canada.admin.aea <- spTransform(canada.admin, aea.crs)
 us.counties.url <- "https://raw.githubusercontent.com/mbostock/topojson/master/examples/us-10m.json"
 us.counties <- readOGR(us.counties.url, layer = "counties")
 
+# (3) California Congressional Boundaries 108 - 112
+calif.cb.url <- "https://raw.githubusercontent.com/sboysel/congressional-district-boundaries/master/California_108_to_112.geojson"
+calif.cb <- readOGR(calif.cb.url, "OGRGeoJSON")
+
 ## Plot
 # (1) Using base plotting methods for Spatial objects
 plot(canada.admin)
