@@ -1,6 +1,6 @@
 PackratFormat: 1.4
 PackratVersion: 0.4.4.4
-RVersion: 3.2.0
+RVersion: 3.2.1
 Repos: CRAN=http://cran.r-project.org
 
 Package: BH
@@ -147,10 +147,14 @@ Version: 0.1.2
 Hash: 38a0f066373a60824cd3ade2362af363
 
 Package: httr
-Source: CRAN
-Version: 1.0.0
-Hash: 165c156aaf69073f9a1f8a4211c626d9
+Source: github
+Version: 1.0.0.9000
+Hash: b9410383e33d701643ad3fb912cfa38f
 Requires: R6, curl, digest, jsonlite, mime, stringr
+GithubRepo: httr
+GithubUsername: hadley
+GithubRef: master
+GithubSha1: 84b5e2cd9580f6b39dc65d1268ab3723eefd77c1
 
 Package: jsonlite
 Source: CRAN
