@@ -40,6 +40,13 @@ us.counties <- readOGR(us.counties.url, layer = "counties")
 calif.cb.url <- "https://raw.githubusercontent.com/sboysel/congressional-district-boundaries/master/California_108_to_112.geojson"
 calif.cb <- readOGR(calif.cb.url, "OGRGeoJSON")
 
+# (4) USA Counties Vector Layer (GeoJSON)
+# http://eric.clst.org/Stuff/USGeoJSON
+# http://eric.clst.org/wupl/Stuff/gz_2010_us_050_00_500k.json
+us.counties.g.url <- "http://eric.clst.org/wupl/Stuff/gz_2010_us_050_00_500k.json"
+us.counties.g <- readOGR(us.counties.g.url, "OGRGeoJSON")
+california.counties <- subset(us.counties.g, STATE == "06")
+
 ## Plot
 # (1) Using base plotting methods for Spatial objects
 plot(canada.admin)
@@ -63,3 +70,21 @@ ggplot() +
             mapping = aes(x = long, y = lat, group = group),
             colour = "orange",
             alpha = 0.5)
+
+# (4)
+california.counties.df <- prepare_spdf(california.counties)
+ggplot(data = california.counties.df) +
+  geom_polygon(mapping = aes(x = long, y = lat, group = group, fill = id)) +
+  geom_path(mapping = aes(x = long, y = lat, group = group),
+            colour = "white",
+            size = 0.5) +
+  theme(legend.position = "none")
+
+sb.county.df <- prepare_spdf(subset(california.counties, NAME == "Santa Barbara"))
+ggplot(data = sb.county.df) +
+  geom_polygon(mapping = aes(x = long, y = lat, group = group),
+               fill = "cornflowerblue") +
+  geom_path(mapping = aes(x = long, y = lat, group = group),
+            colour = "white",
+            size = 0.5) +
+  theme(legend.position = "none")
