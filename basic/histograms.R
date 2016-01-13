@@ -17,13 +17,16 @@ ggplot(data = df, mapping = aes(x = x)) +
   geom_histogram(mapping = aes(y = ..density..),
                  binwidth = 0.2,
                  fill = "white",
-                 colour = "black")
+                 colour = "white")
 
 # with density curve
 ggplot(data = df,
        mapping = aes(x = x)) +
-  geom_histogram( mapping = aes(y = ..density..),
-                 binwidth = 0.2) +
+  geom_histogram(mapping = aes(y = ..density..),
+                 binwidth = 0.4,
+                 fill = "cornflowerblue",
+                 colour = "white",
+                 alpha = 0.5) +
   geom_density()
 
 # with facets
