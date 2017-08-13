@@ -6,8 +6,8 @@ library(lubridate)
 library(jsonlite)
 
 ## Define Functions
-get_hm <- function(t) {
-  dt <- parse_date_time(t, "%Y-%m-%d %H:%M")
+get_hm <- function(t, format = "%Y-%m-%d %H:%M") {
+  dt <- parse_date_time(t, orders = format)
   period <- new_period(hour = hour(dt), minute = minute(dt))
   return(period)
 }
@@ -69,6 +69,7 @@ santabarbara <- get_tides(station = 9411340, location = "Santa Barbara, CA")
 barharbor <- get_tides(station = 8413320, location = "Bar Harbor, ME")
 corpuschristi <- get_tides(station = 8775870, location = "Corpus Christi, TX")
 tides <- dplyr::bind_rows(santabarbara, barharbor, corpuschristi)
+save(tides, file = "../data/tides.RData")
 
 ## Plot
 tides %>%

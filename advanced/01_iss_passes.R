@@ -18,7 +18,12 @@ iss.gs <- gs_key(x = "1POSnldycAhHfrMSG_3SWeUlqlTcXhYj-aB1AuwVzXro")
 
 ## Read ISS Passes from googlesheets object
 iss.raw <- gs_read(ss = iss.gs,
-               ws = 1)
+                   ws = 1)
+## Define Functions
+get_hm <- function(dt) {
+  period <- new_period(hour = hour(dt), minute = minute(dt))
+  return(period)
+}
 
 ## Parsing Dates
 iss.clean <- iss.raw %>%
@@ -30,12 +35,14 @@ iss.clean <- iss.raw %>%
          start.yday = yday(start),
          start.mday = mday(start),
          start.wday = wday(start, label = TRUE),
-         start.hms = format(start, "%I:%M%p") %>% hm(),
+         #start.hms = format(start, "%I:%M%p") %>% hm(),
+         start.hm = get_hm(start),
          end.month = month(end, label = TRUE),
          end.yday = yday(end),
          end.mday = mday(end),
          end.wday = wday(end, label = TRUE),
-         end.hms = format(end, "%I:%M%p") %>% hm(),
+         #end.hms = format(end, "%I:%M%p") %>% hm(),
+         end.hm = get_hm(end),
          week = week(start),
          ID = 1:nrow(iss.raw))
 
